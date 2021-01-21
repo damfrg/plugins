@@ -70,10 +70,12 @@ public class newActivity extends Activity {
     }
 
     private void openAblum() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);// 任意类型文件
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);// 任意类型文件
         intent.setType("*/*");
-        // intent.addCategory(Intent.CATEGORY_OPENABLE);
+        intent.addCategory(Intent.CATEGORY_OPENABLE);
         // startActivityForResult(intent,1);
+        intent.addFlags(Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION)
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
         startActivityForResult(Intent.createChooser(intent, "Choose File to Upload.."), 101);
     }
 
