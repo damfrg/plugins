@@ -74,7 +74,7 @@ public class newActivity extends Activity {
         intent.setType("*/*");
         // intent.addCategory(Intent.CATEGORY_OPENABLE);
         // startActivityForResult(intent,1);
-        startActivityForResult(Intent.createChooser(intent, "Choose File to Upload.."), PICK_FILE_REQUEST);
+        startActivityForResult(Intent.createChooser(intent, "Choose File to Upload.."), 101);
     }
 
     private void openCarem() {
